@@ -5,9 +5,6 @@ robots-own [avoiding? reachX reachY r? f? l? routing? turnLeft? xc yc dist]
 globals [ foundTarget? scanRadius posn targetX targetY offset step-size]
 
 
-;;;;;
-; END BEHAVIOUR: WHAT HAPPENS WHEN ITS FINISHED??
-;;;;;
 
 
 to setup
@@ -172,21 +169,14 @@ to checkIfTargetFound
   ]
 end
 to checkObstacles
-  ;if (ycor + scanRadius > max-pycor) [stop]
   ;; on the edge?
   if patch-ahead 1 != nobody [
     if [pcolor] of patch-ahead 1 = red [
-      ;; obstacles detected
-      ;;set avoiding? true
 
       ;; this stuff is variable
 
         set reachX xcor
         right 90
-
-      ;; ACTUALLY SEE THE BEST DIRECTION TO GO
-
-
     ]
   ]
 end
