@@ -15,5 +15,6 @@ Each agent can only move in 4 Cardinal Directions and can only sense its immedia
 **Results:** <br />
 The algorithm was significantly faster to find the target and was succesfull more times than Random Search and Searching in a set pattern, two of the most commonly used algorithms that are used under the presented contraints. 
 
-
+**Skills I learned:** <br />
+Agent Based Modeling, Search Algorithms, ad hoc Algorithms
 
