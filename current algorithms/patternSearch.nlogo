@@ -5,9 +5,7 @@ robots-own [avoiding? reachX reachY r? f? l? routing? turnLeft?]
 globals [ foundTarget? scanRadius posn targetX targetY offset]
 
 
-;;;;;
-; END BEHAVIOUR: WHAT HAPPENS WHEN ITS FINISHED??
-;;;;;
+
 
 
 to setup
@@ -173,7 +171,6 @@ to checkIfTargetFound
   ]
 end
 to checkObstacles
-  ;if (ycor + scanRadius > max-pycor) [stop]
   ;; on the edge?
   if patch-ahead 1 != nobody [
     if [pcolor] of patch-ahead 1 = red [
@@ -183,7 +180,7 @@ to checkObstacles
       ;; this stuff is variable
       ifelse routing? [
         set reachY ycor
-        ifelse turnLeft? [ print "bap"
+        ifelse turnLeft? [ 
           left 90 ] [
         right 90
         ]
@@ -192,9 +189,6 @@ to checkObstacles
         set reachX xcor
         right 90
       ]
-      ;; ACTUALLY SEE THE BEST DIRECTION TO GO
-
-
     ]
   ]
 end
@@ -202,7 +196,6 @@ end
 
 to move
   ;; UP DOWN SEARCH
-  ;;(xcor + scanRadius > max-pxcor)
   if (ycor + scanRadius > max-pycor) [
     right 90
     set routing? true
@@ -218,7 +211,6 @@ to move
     ]
     right 90
   ]
-  ;;or (xcor - scanRadius < min-pxcor)
   if (ycor - scanRadius < min-pycor)  [
     left 90
     set routing? true
